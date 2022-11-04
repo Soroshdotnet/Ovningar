@@ -7,7 +7,7 @@ namespace Övning1_Personalregister
 //    2.Programmet skall kunna skriva ut registret i en konsol."
 //
 //    Uppgift 1 Vilka klasser bör ingå i programmet?
-//    - Jag tror en klass program räcker.
+//    - En klass "program" bör räcka.
 //
 //    Uppgift 2 Vilka attribut och metoder bör ingå i dessa klasser?
 //    - En metod för inhämtning av strängar och en metod för inhämting av intiger. 
@@ -30,10 +30,14 @@ namespace Övning1_Personalregister
             Console.WriteLine("[4] Avsluta");
             Console.Write("\nVälj: ");
 
-            //STRÄNGVARIABLE SPARAR DATA FRÅN ANVÄNDARE (MENYVAL 1) input
+            //STRÄNGVARIABLE SPARAR DATA FRÅN ANVÄNDARE (MENYVAL 1)
 
             string namn = "";
-            string lön = "";
+            int lön = 0;
+
+            var listOfNames = new List<string>();
+            var listOfSalaries = new List<int>();
+
 
             /* === WHILE LOOP OCH KODBLOCK FÖR SWITCH MENY, KÖR PROGRAMMET I EN LOOP === */
             while (true)
@@ -47,10 +51,11 @@ namespace Övning1_Personalregister
                     //MENYVAL 1 - SPARA INNEHÅLL FRÅN ANVÄNDARE
                     case "1":
                         Console.Write("Ange fullständigt namn för anställd: ");
-                        namn = Console.ReadLine();
+                        listOfNames.Add(namn);
 
                         Console.Write("Ange personallön: ");
-                        lön = Console.ReadLine();
+                        //lön = Console.ReadLine();
+                        listOfSalaries.Add(lön);
 
                         //BEKRÄFTAR ÅTGÄRD
                         Console.WriteLine("Sparad!");
@@ -58,16 +63,17 @@ namespace Övning1_Personalregister
                         //AVSLUTAR MENYVAL
                         break;
 
-                    //MENYVAL 2 - VISAR INNEHÅLL SPARAD I STRÄNGVARIABEL input  
+                    //MENYVAL 2 - VISAR INNEHÅLL SPARAD I STRÄNGVARIABEL  
                     case "2":
-              
-                        Console.WriteLine("Anställda: " + namn + " har " + lön + " kr i lön.");
+
+                         //Console.WriteLine("Anställda: " + namn + " har " + lön + " kr i lön.");
+                        //Console.WriteLine("Anställda: " + listOfNames + " har " + listOfSalaries + " kr i lön.");
                         break;
 
                     //MENYVAL 3 - TÖMMER PERSONALREGISTRET
                     case "3":
-                        namn = "";
-                        lön = "";
+                        //namn = "";
+                        //lön = 0;
 
                         //BEKRÄFTAR ÅTGÄRD
                         Console.WriteLine("Personalregistret är tomt");
