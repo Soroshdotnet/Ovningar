@@ -6,7 +6,7 @@ namespace Övning_2_Flow_Control
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Välkommen till SF Bio!");
+            Console.WriteLine("Välkommen till övning 2 Flow Control!");
             // 1.Berätta för användaren att de har kommit till huvudmenyn och de kommer navigeragenom att skriva in siffror för att testa olika funktioner.
             // Metod PrintMenu
             PrintMenu();
@@ -86,20 +86,29 @@ namespace Övning_2_Flow_Control
 
 
                     case "2":
-
-                        ////ToDo: Skapa foor loop skriv ut inmatning 10 gånger
-                        
                         Console.Write("Skriv något: ");
-                        int x10 = int.Parse(Console.ReadLine());
-
+                        string x10 = Console.ReadLine();
                         Console.Write("\nResultat: ");
                         for (int index = 0; index < 10; index++)
                         {
                             Console.Write(x10);
                         }
+                        break;
 
+
+
+
+
+                    // ToDo: Menyval 3: Det tredje ordet
+                    case "3":
+
+                        Console.WriteLine("Menyval 3: Det tredje ordet kommer snart");
 
                         break;
+
+
+
+
 
 
 
@@ -124,14 +133,18 @@ namespace Övning_2_Flow_Control
 
         private static void PrintMenu()
         {
+            Console.WriteLine("\n_____________________________");
+            Console.WriteLine("HUVUDMENY VÄLJ ETT ALTERNATIV");
+            
             Console.WriteLine("\nNavigera genom sifferval + Enter");
 
             Console.WriteLine("Menyval 1: Ungdom eller pensionär");
             Console.WriteLine("Menyval 2: Upprepa tio gånger");
+            Console.WriteLine("Menyval 3: Det tredje ordet");
             Console.WriteLine("Menyval 0: Avsluta programmet");
 
             Console.Write("\nVälj: ");
-
+                      
         }
     }
 }
