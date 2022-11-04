@@ -50,7 +50,7 @@ namespace Övning_2_Flow_Control
                             //ToDo: Beräkna sällsak i undermenyn
 
                             /*
-                             * Initisiera prisklasser
+                             * Initisiera prisklasser för att kunna beräkna sällskap
                              * 
                              * /
 
@@ -63,20 +63,15 @@ namespace Övning_2_Flow_Control
                             fråga antal personer
                             skriv ut personer
                             fråga ålder per person
-                            räkna prisklass x antal
-                             
+                            räkna summa av prisklass x antal personer
                              */
 
 
-                            //string antal = Console.ReadLine();
+                            //string antalPers = Console.ReadLine();
                             //Console.Write("Ange antal personer: ");
 
-                            //string pers = Console.ReadLine();
+                            //string prisKlass = Console.ReadLine();
                             //Console.Write("Ange ålder för varje person: ");
-
-
-                            //Console.Write("Ange antal personer: ");
-
 
 
                         }
@@ -92,15 +87,13 @@ namespace Övning_2_Flow_Control
 
                     case "2":
 
-                        //ToDo: Skapa foor loop 
+                        //ToDo: Skapa foor loop skriv ut inmatning 10 gånger
                         Console.Write("Skriv något: ");
                         int x10 = int.Parse(Console.ReadLine());
 
                         Console.WriteLine("\nResultat");
                         for (int i = 0; i < x10; i++)
                         {
-                            x10 = x10 * i;
-
                             Console.Write(x10);
                         }
 
