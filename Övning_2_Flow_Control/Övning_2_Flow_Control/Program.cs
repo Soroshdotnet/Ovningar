@@ -87,19 +87,19 @@ namespace Övning_2_Flow_Control
 
                     case "2":
 
-                        //ToDo: Skapa foor loop skriv ut inmatning 10 gånger
+                        ////ToDo: Skapa foor loop skriv ut inmatning 10 gånger
+                        
                         Console.Write("Skriv något: ");
                         int x10 = int.Parse(Console.ReadLine());
 
-                        Console.WriteLine("\nResultat");
-                        for (int i = 0; i < x10; i++)
+                        Console.Write("\nResultat: ");
+                        for (int index = 0; index < 10; index++)
                         {
                             Console.Write(x10);
                         }
 
+
                         break;
-
-
 
 
 
@@ -115,7 +115,7 @@ namespace Övning_2_Flow_Control
 
 
 
-                Console.Write("\nVad vill du göra nu?"); //Uppmanar användare till nytt menyval
+                Console.Write("\n\nVad vill du göra nu?"); //Uppmanar användare till nytt menyval
                 PrintMenu();
 
             } while (true);
