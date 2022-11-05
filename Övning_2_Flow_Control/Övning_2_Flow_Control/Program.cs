@@ -166,9 +166,14 @@ namespace Övning_2_Flow_Control
 
         private static void RäknaSällskap(int[] antalPers)
         {
-            int[] ungdom = new int[antalPers.Length];
-            int[] standard = new int[antalPers.Length];
-            int[] elder = new int[antalPers.Length];
+
+            int[] prisKlass = new int[3] {80, 90, 120};
+
+
+
+            //int[] ungdom = new int[antalPers.Length];
+            //int[] standard = new int[antalPers.Length];
+            //int[] elder = new int[antalPers.Length];
 
             for (int i = 0; i < antalPers.Length; i++)
             {
@@ -178,17 +183,17 @@ namespace Övning_2_Flow_Control
 
                 if (age2 <= 20)
                 {
-                    ungdom[i] = age2;
+                    prisKlass[i] = 80;
                     Console.WriteLine("Ungdomspris: 80kr");
                 }
                 else if (age2 >= 64)
                 {
-                    elder[i] = age2;
+                    prisKlass[i] = 90;
                     Console.WriteLine("Pensionärspris: 90kr");
                 }
                 else
                 {
-                    standard[i] = age2;
+                    prisKlass[i] = 120;
                     Console.WriteLine("Standardpris: 120kr");
                 }
             }
