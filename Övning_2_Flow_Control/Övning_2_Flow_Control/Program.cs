@@ -167,13 +167,15 @@ namespace Övning_2_Flow_Control
         private static void RäknaSällskap(int[] antalPers)
         {
 
-            int[] prisKlass = new int[3] {80, 90, 120};
+            //prisListor
+            List<int> ungdom = new List<int>(80);
+            List<int> standard = new List<int>(120);
+            List<int> elder = new List<int>(90);
 
-
-
-            //int[] ungdom = new int[antalPers.Length];
-            //int[] standard = new int[antalPers.Length];
-            //int[] elder = new int[antalPers.Length];
+            //prisKlasser (arrays)
+            //int[] ungdom = new int[80];
+            //int[] standard = new int[120];
+            //int[] elder = new int[90];
 
             for (int i = 0; i < antalPers.Length; i++)
             {
@@ -183,17 +185,17 @@ namespace Övning_2_Flow_Control
 
                 if (age2 <= 20)
                 {
-                    prisKlass[i] = 80;
+                    ungdom.Add(age2);
                     Console.WriteLine("Ungdomspris: 80kr");
                 }
                 else if (age2 >= 64)
                 {
-                    prisKlass[i] = 90;
+                    elder.Add(age2);
                     Console.WriteLine("Pensionärspris: 90kr");
                 }
                 else
                 {
-                    prisKlass[i] = 120;
+                    standard.Add(age2);
                     Console.WriteLine("Standardpris: 120kr");
                 }
             }
@@ -203,6 +205,11 @@ namespace Övning_2_Flow_Control
                 Console.WriteLine($"Angivna ålder person {i + 1}:\t{antalPers[i]} år");
 
             }
+
+            Console.WriteLine("\nAntal ungdom: " + ungdom.Count + "\nAntal pensionär: " + elder.Count + "\nAntal Vuxna: " + standard.Count);
+
+
+            
 
         }
 
