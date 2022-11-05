@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 namespace Övning_2_Flow_Control
 {
@@ -31,8 +32,8 @@ namespace Övning_2_Flow_Control
                         else //7.Annars skall programmet
                         {
                             Console.WriteLine("Standardpris: 120kr"); // skriva ut: Standardpris: 120kr
-
                         }
+
 
 
                         /**************
@@ -44,32 +45,34 @@ namespace Övning_2_Flow_Control
                         Console.WriteLine("0: Tillbaka");
                         string menu2 = Console.ReadLine(); //Läser input undermeny
 
+
                         if (menu2 == "1")
                         {
 
-                            //ToDo: Beräkna sällsak i undermenyn
 
-                            /*
-                             * Initisiera prisklasser för att kunna beräkna sällskap
-                             * 
-                             * /
+                   
 
 
-                            /*
-                             Kolla lista och arrays.
+
+                            /* ToDo: Beräkna sällsak i undermenyn
+                            
+                            Initisiera prisklasser för att kunna beräkna sällskap
+                         
+                            Kolla lista och arrays.
                             Antal pers
-                            Ålder per pers -> ger pris per person * antal
+                            Ålder per pers -> ger pris per person
 
                             fråga antal personer
                             skriv ut personer
                             fråga ålder per person
-                            räkna summa av prisklass x antal personer
+                            ange prisklass per person
+                            summera totalet
                              */
 
+                            
 
-                            //string antalPers = Console.ReadLine();
-                            //Console.Write("Ange antal personer: ");
 
+                            
                             //string prisKlass = Console.ReadLine();
                             //Console.Write("Ange ålder för varje person: ");
 
@@ -107,12 +110,20 @@ namespace Övning_2_Flow_Control
                         break;
 
 
+                    case "4":
+
+                        /*Prisklasser*/
+
+
+                        Console.Write("Ange antal personer: ");
+                        int lenght = int.Parse(Console.ReadLine());
+                        int[] antalPers = new int[lenght];
+
+                        RäknaSällskap(antalPers); //Metod
 
 
 
-
-
-
+                        break;
 
                     case "0": //Exit program
                         Environment.Exit(0);
@@ -131,16 +142,48 @@ namespace Övning_2_Flow_Control
 
         }
 
+        private static void RäknaSällskap(int[] antalPers)
+        {
+
+            for (int i = 0; i < antalPers.Length; i++)
+            {
+                Console.Write($"Ange ålder person {i + 1}: ");
+                int age2 = int.Parse(Console.ReadLine());
+                antalPers[i] = age2;
+
+                if (age2 <= 20)
+                {
+                    Console.WriteLine("Ungdomspris: 80kr");
+                }
+                else if (age2 >= 64)
+                {
+                    Console.WriteLine("Pensionärspris: 90kr");
+                }
+                else
+                {
+                    Console.WriteLine("Standardpris: 120kr");
+                }
+            }
+
+            for (int i = 0; i < antalPers.Length; i++)
+            {
+                Console.WriteLine($"Angivna ålder person {i + 1}:\t{antalPers[i]} år");
+
+            }
+        }
+
         private static void PrintMenu()
         {
             Console.WriteLine("\n_____________________________");
-            Console.WriteLine("HUVUDMENY VÄLJ ETT ALTERNATIV");
+            Console.WriteLine("HUVUDMENY VÄLJ EN FUNKTION");
             
             Console.WriteLine("\nNavigera genom sifferval + Enter");
 
             Console.WriteLine("Menyval 1: Ungdom eller pensionär");
             Console.WriteLine("Menyval 2: Upprepa tio gånger");
             Console.WriteLine("Menyval 3: Det tredje ordet");
+            Console.WriteLine("Menyval 4: Test");
+
             Console.WriteLine("Menyval 0: Avsluta programmet");
 
             Console.Write("\nVälj: ");
