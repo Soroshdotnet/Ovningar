@@ -36,8 +36,6 @@ namespace Övning_2_Flow_Control
                             Console.WriteLine("Standardpris: 120kr"); // skriva ut: Standardpris: 120kr
                         }
 
-
-
                         /**************
                          **UNDERMENYN**
                          **************/
@@ -51,10 +49,10 @@ namespace Övning_2_Flow_Control
                         if (menu2 == "1")
                         {
 
-
-                   
-
-
+                            //Console.Write("Ange antal personer: ");
+                            //int lenght = int.Parse(Console.ReadLine());
+                            //int[] antalPers = new int[lenght];
+                            //RäknaSällskap(antalPers); //Metod
 
                             /* ToDo: Beräkna sällsak i undermenyn
                             
@@ -71,12 +69,6 @@ namespace Övning_2_Flow_Control
                             summera totalet
                              */
 
-                            
-
-
-                            
-                            //string prisKlass = Console.ReadLine();
-                            //Console.Write("Ange ålder för varje person: ");
 
                         }
                         else if (menu2 == "0")
@@ -85,37 +77,31 @@ namespace Övning_2_Flow_Control
                         break;
                     /***************************/
 
-
-
                     case "2":
                         Console.Write("Skriv något: ");
                         string x10 = Console.ReadLine();
                         Console.Write("\nResultat: ");
                         for (int index = 0; index < 10; index++)
                         {
-                            Console.Write(x10);
+                            Console.Write(". " + x10);
                         }
                         break;
 
-
-
-
-
-
-
-
-                    // ToDo: Menyval 3: Det tredje ordet
                     case "3":
 
-                        Console.WriteLine("Menyval 3: Det tredje ordet kommer snart");
+                    //Händelseförloppet förklaras nedan: 1.
+                    //Användaren anger en mening med minst 3 ord
+                    //2.Programmet delar upp strängen med split - metoden på varje mellanslag
+                    //3.Programmet plockar ut den tredje strängen(ordet) ur input
+                    //4.Programmet skriver ut den tredje strängen(ordet)
 
+                        Console.Write("Skriv en mening över 3 ord: ");
+                        var phrase = Console.ReadLine();
+                        var words = phrase.Split(" ");
+
+                        Console.Write("Det tredje ordet i din mening är: " + words[2]);
+                        
                         break;
-
-
-
-
-
-
 
                     case "4":
 
@@ -125,12 +111,6 @@ namespace Övning_2_Flow_Control
                         int lenght = int.Parse(Console.ReadLine());
                         int[] antalPers = new int[lenght];
                         RäknaSällskap(antalPers); //Metod
-
-
-
-
-
-
 
 
 
@@ -168,8 +148,8 @@ namespace Övning_2_Flow_Control
         {
 
             //prisListor
-            List<int> ungdom = new List<int>(80);
             List<int> standard = new List<int>(120);
+            List<int> ungdom = new List<int>(80);
             List<int> elder = new List<int>(90);
 
             //prisKlasser (arrays)
@@ -204,12 +184,13 @@ namespace Övning_2_Flow_Control
             {
                 Console.WriteLine($"Angivna ålder person {i + 1}:\t{antalPers[i]} år");
 
+                Console.WriteLine("\nAntal Vuxna: " + standard.Count + "\nAntal Ungdom: " + ungdom.Count + "\nAntal Pensionär: " + elder.Count);
+
+                Console.WriteLine("Total summa: ");
+                Console.WriteLine("");
+
             }
 
-            Console.WriteLine("\nAntal ungdom: " + ungdom.Count + "\nAntal pensionär: " + elder.Count + "\nAntal Vuxna: " + standard.Count);
-
-
-            
 
         }
 
