@@ -35,26 +35,11 @@ namespace Övning_2_Flow_Control
 
                         if (menu2 == "1")
                         {
+                            Console.Write("Ange antal personer: ");
+                            int lenght = int.Parse(Console.ReadLine());
+                            int[] antalPers = new int[lenght];
+                            RäknaSällskap(antalPers); //Metod
 
-                            //Console.Write("Ange antal personer: ");
-                            //int lenght = int.Parse(Console.ReadLine());
-                            //int[] antalPers = new int[lenght];
-                            //RäknaSällskap(antalPers); //Metod
-
-                            /* ToDo: Beräkna sällsak i undermenyn
-                            
-                            Initisiera prisklasser för att kunna beräkna sällskap
-                         
-                            Kolla lista och arrays.
-                            Antal pers
-                            Ålder per pers -> ger pris per person
-
-                            fråga antal personer
-                            skriv ut personer
-                            fråga ålder per person
-                            ange prisklass per person
-                            summera totalet
-                             */
                         }
 
                         else if (menu2 == "0")
@@ -78,26 +63,8 @@ namespace Övning_2_Flow_Control
 
                     case "4":
 
-                        /*TEST  Beräkna sällskap - Flyttas till Case 1:1 */
-
-                        Console.Write("Ange antal personer: ");
-                        int lenght = int.Parse(Console.ReadLine());
-                        int[] antalPers = new int[lenght];
-                        RäknaSällskap(antalPers); //Metod
-
-
-
-                        //List<int> antalPersList = new List<int>();
-                        //Console.Write("Ange antal personer: ");
-                        //int lenght = int.Parse(Console.ReadLine());
-                        //for (int i = 0; i < length; i++)
-                        //{
-                        //    Console.Write($"Ange ålder person {i + 1}: ");
-                        //    int age2 = int.Parse(Console.ReadLine());
-                        //    antalPersList.Add(age2);
-                        //}
-
-
+                      
+                        
                         break;
 
                     case "0": //Exit program
@@ -122,14 +89,9 @@ namespace Övning_2_Flow_Control
         {
 
             //prisListor
-            List<int> standard = new List<int>(120);
-            List<int> ungdom = new List<int>(80);
-            List<int> elder = new List<int>(90);
-
-            //prisKlasser (arrays)
-            //int[] ungdom = new int[80];
-            //int[] standard = new int[120];
-            //int[] elder = new int[90];
+            List<int> vuxen = new List<int>();
+            List<int> ungdom = new List<int>();
+            List<int> elder = new List<int>();
 
             for (int i = 0; i < persAge.Length; i++)
             {
@@ -149,7 +111,7 @@ namespace Övning_2_Flow_Control
                 }
                 else
                 {
-                    standard.Add(ageInput);
+                    vuxen.Add(ageInput);
                     Console.WriteLine("Standardpris: 120kr");
                 }
             }
@@ -160,22 +122,18 @@ namespace Övning_2_Flow_Control
 
             }
 
-            Console.WriteLine("\nAntal Vuxna: " + standard.Count + "\nAntal Ungdom: " + ungdom.Count + "\nAntal Pensionär: " + elder.Count);
+            Console.WriteLine("\nAntal Vuxna: " + vuxen.Count + "\nAntal Ungdom: " + ungdom.Count + "\nAntal Pensionär: " + elder.Count);
 
+            //Priser
+            int prisVuxen = vuxen.Count() * 120;
+            int prisUngdom = ungdom.Count() * 80;
+            int prisElder = elder.Count() * 90;
 
-            //int antalPers = elder.Sum(x => Convert.ToInt32(x));
+            Console.Write("\nSumma Vuxen: " + prisVuxen + " Kr.");
+            Console.Write("\nSumma Ungdom: " + prisUngdom + " Kr.");
+            Console.Write("\nSumma Pensionär: " + prisElder + " Kr.");
 
-            //Console.WriteLine("Total summa: " + totalS+ totalU+ totalE);
-
-
-
-            //int totalS = standard.Sum(x => Convert.ToInt32(x));
-            //int totalU = ungdom.Sum(x => Convert.ToInt32(x));
-            //int totalE = elder.Sum(x => Convert.ToInt32(x));
-
-            //Console.WriteLine("Total summa: " + totalS+ totalU+ totalE);
-
-            Console.WriteLine("");
+            Console.Write("\nTotal summa: " + (prisElder+prisUngdom+prisVuxen) + " Kr.");
 
         }
 
@@ -232,7 +190,6 @@ namespace Övning_2_Flow_Control
                 "\n             Undermeny 1:1: Beräkna sällskap");
             Console.WriteLine("Menyval 2: Upprepa tio gånger");
             Console.WriteLine("Menyval 3: Det tredje ordet");
-            Console.WriteLine("Menyval 4: Test Case 1:1 ");
 
             Console.WriteLine("Menyval 0: Avsluta programmet");
 
