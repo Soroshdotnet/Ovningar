@@ -5,6 +5,8 @@ namespace Övning_2_Flow_Control
 {
     internal class Program
     {
+        private static int length;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Välkommen till övning 2 Flow Control!");
@@ -76,15 +78,12 @@ namespace Övning_2_Flow_Control
                             //string prisKlass = Console.ReadLine();
                             //Console.Write("Ange ålder för varje person: ");
 
-
                         }
                         else if (menu2 == "0")
                             break;
                         else Console.WriteLine("Error");
                         break;
                     /***************************/
-
-
 
 
 
@@ -102,6 +101,9 @@ namespace Övning_2_Flow_Control
 
 
 
+
+
+
                     // ToDo: Menyval 3: Det tredje ordet
                     case "3":
 
@@ -110,17 +112,37 @@ namespace Övning_2_Flow_Control
                         break;
 
 
+
+
+
+
+
                     case "4":
 
-                        /*Prisklasser*/
-
-
+                        /*TEST 
+                        Beräkna sällskap - Flyttas till Case 1:1 */
                         Console.Write("Ange antal personer: ");
                         int lenght = int.Parse(Console.ReadLine());
                         int[] antalPers = new int[lenght];
-
                         RäknaSällskap(antalPers); //Metod
 
+
+
+
+
+
+
+
+
+                        //List<int> antalPersList = new List<int>();
+                        //Console.Write("Ange antal personer: ");
+                        //int lenght = int.Parse(Console.ReadLine());
+                        //for (int i = 0; i < length; i++)
+                        //{
+                        //    Console.Write($"Ange ålder person {i + 1}: ");
+                        //    int age2 = int.Parse(Console.ReadLine());
+                        //    antalPersList.Add(age2);
+                        //}
 
 
                         break;
@@ -144,6 +166,9 @@ namespace Övning_2_Flow_Control
 
         private static void RäknaSällskap(int[] antalPers)
         {
+            int[] ungdom = new int[antalPers.Length];
+            int[] standard = new int[antalPers.Length];
+            int[] elder = new int[antalPers.Length];
 
             for (int i = 0; i < antalPers.Length; i++)
             {
@@ -153,14 +178,17 @@ namespace Övning_2_Flow_Control
 
                 if (age2 <= 20)
                 {
+                    ungdom[i] = age2;
                     Console.WriteLine("Ungdomspris: 80kr");
                 }
                 else if (age2 >= 64)
                 {
+                    elder[i] = age2;
                     Console.WriteLine("Pensionärspris: 90kr");
                 }
                 else
                 {
+                    standard[i] = age2;
                     Console.WriteLine("Standardpris: 120kr");
                 }
             }
@@ -170,6 +198,7 @@ namespace Övning_2_Flow_Control
                 Console.WriteLine($"Angivna ålder person {i + 1}:\t{antalPers[i]} år");
 
             }
+
         }
 
         private static void PrintMenu()
