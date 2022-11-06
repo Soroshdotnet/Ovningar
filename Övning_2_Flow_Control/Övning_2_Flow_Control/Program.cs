@@ -5,6 +5,7 @@ namespace Övning_2_Flow_Control
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("Välkommen till övning 2 Flow Control!");
@@ -77,17 +78,24 @@ namespace Övning_2_Flow_Control
             Console.Write("Ange ålder: ");
             int age = int.Parse(Console.ReadLine()); // Läser inmatning och konverterar detta från en sträng till en int
 
-            if (age <= 20)//3.Programmet ser om personen är ungdom (under 20 år)
+            if (age >= 6 && age <= 99)//3.Programmet ser om personen är ungdom (under 5 år eller över 100)
             {
-                Console.WriteLine("Ungdomspris: 80kr"); //4.Om det ovanstående är sant skall programmet skriva ut: Ungdomspris: 80kr
+                if (age <= 20)//3.Programmet ser om personen är ungdom (under 20 år)
+                {
+                    Console.WriteLine("Ungdomspris: 80kr"); //4.Om det ovanstående är sant skall programmet skriva ut: Ungdomspris: 80kr
+                }
+                else if (age >= 64) //5.Annars kollar programmet om personen är en pensionär (över 64 år)
+                {
+                    Console.WriteLine("Pensionärspris: 90kr"); // 6.Om ovanstående är sant skall programmet skruva ut: Pensionärspris: 90kr
+                }
+                else //7.Annars skall programmet
+                {
+                    Console.WriteLine("Standardpris: 120kr"); // skriva ut: Standardpris: 120kr
+                }
             }
-            else if (age >= 64) //5.Annars kollar programmet om personen är en pensionär (över 64 år)
+            else //3.Programmet ser om personen är ungdom (under 5 år eller över 100)
             {
-                Console.WriteLine("Pensionärspris: 90kr"); // 6.Om ovanstående är sant skall programmet skruva ut: Pensionärspris: 90kr
-            }
-            else //7.Annars skall programmet
-            {
-                Console.WriteLine("Standardpris: 120kr"); // skriva ut: Standardpris: 120kr
+                Console.WriteLine("Gratis Entré!"); //4.Om det ovanstående är sant skall programmet skriva ut: Ungdomspris: 80kr
             }
         }
         private static void RäknaSällskap(int[] persAge)
