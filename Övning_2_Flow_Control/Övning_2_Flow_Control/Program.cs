@@ -1,15 +1,16 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.Diagnostics.Metrics;
+using System.Security.Cryptography;
 
 namespace Övning_2_Flow_Control
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
             Console.WriteLine("Välkommen till övning 2 Flow Control!");
-            Console.WriteLine("\nNavigera genom sifferval + Enter\n--------------------------\n");
+            Console.WriteLine("\n--------------------------\n");
 
             // Metod PrintMenu
             PrintMenu();
@@ -28,20 +29,19 @@ namespace Övning_2_Flow_Control
                         Console.WriteLine("UNDERMENY VÄLJ ETT ALTERNATIV");
                         Console.WriteLine("1: Beräkna sällskap");
                         Console.WriteLine("0: Tillbaka");
-
                         string menu2 = Console.ReadLine(); //Läser input undermeny
 
                         if (menu2 == "1") //om menyval 1:1 påbörja beräkning av sällskap
 
-                            /*
-                             * Hämtar antal personer
-                             * Hämtar ålder per person
-                             * Sparar personer i respektive kundgrupper (vuxen, ung, elder)
-                             * Kalkylerar pris per kundgrupp
-                             * Summerar pris för kundgrupp
-                             */
+                        /*
+                         * Hämtar antal personer
+                         * Hämtar ålder per person
+                         * Sparar personer i respektive kundgrupper (vuxen, ung, elder)
+                         * Kalkylerar pris per kundgrupp
+                         * Summerar pris för kundgrupp
+                         */
                         {
-                            Console.Write("Ange antal personer: ");
+                            Console.Write("Ange antal personer sedan tryck Enter: ");
                             int lenght = int.Parse(Console.ReadLine()); //hämtar antal och omvandlar sträng till int
                             int[] antalPers = new int[lenght]; //array för att spara antal personer
                             RäknaSällskap(antalPers); //Metod beräkna sällskap
@@ -49,6 +49,9 @@ namespace Övning_2_Flow_Control
 
                         else if (menu2 == "0") // tillbaka till huvudmenyn
                             break;
+
+                        //Console.Write("Navigera med sifferval sedan tryck Enter: ");
+
                         else Console.WriteLine("Error"); //Undantagshantering 
                         break;
 
@@ -165,7 +168,7 @@ namespace Övning_2_Flow_Control
         }
         private static void TenTimes()
         {
-            Console.Write("Skriv något: ");
+            Console.Write("Skriv något sedan tryck Enter: ");
             string x10 = Console.ReadLine(); //Sparar sträng i variabel x10
             Console.Write("\nResultat: ");
             for (int index = 0; index < 10; index++) //Loppar index 10 gånger
@@ -191,7 +194,7 @@ namespace Övning_2_Flow_Control
             Console.WriteLine("Menyval 2: Upprepa tio gånger");
             Console.WriteLine("Menyval 3: Det tredje ordet");
             Console.WriteLine("Menyval 0: Avsluta programmet");
-            Console.Write("\nVälj: ");                   
+            Console.Write("\nNavigera genom sifferval sedan tryck Enter: ");                   
         }
     }
 }
