@@ -100,11 +100,11 @@ namespace Övning_2_Flow_Control
         }
         private static void RäknaSällskap(int[] persAge)
         {
-
             //Kundgrupper
             List<int> vuxen = new List<int>();
             List<int> ungdom = new List<int>();
             List<int> elder = new List<int>();
+            List<int> free = new List<int>();
 
             for (int i = 0; i < persAge.Length; i++) // Loopar lika många gånger som det finns element i array 
             {
@@ -112,44 +112,55 @@ namespace Övning_2_Flow_Control
                 int ageInput = int.Parse(Console.ReadLine()); //omvandlar sträng till int
                 persAge[i] = ageInput; // sparar ålder per element/person
 
-                // Placerar person i respektive lista för kundgrupper
-                if (ageInput <= 20) 
+
+                if (ageInput >= 6 && ageInput <= 99)//3.Programmet ser om personen är ungdom (under 5 år eller över 100)
                 {
-                    ungdom.Add(ageInput);
-                    Console.WriteLine("Ungdomspris: 80kr");
+                    if (ageInput <= 20)//3.Programmet ser om personen är ungdom (under 20 år)
+                    {
+                        ungdom.Add(ageInput);
+                        Console.WriteLine("Ungdomspris: 80kr");
+                    }
+                    else if (ageInput >= 64) //5.Annars kollar programmet om personen är en pensionär (över 64 år)
+                    {
+                        elder.Add(ageInput);
+                        Console.WriteLine("Pensionärspris: 90kr");
+                    }
+                    else //7.Annars skall programmet
+                    {
+                        vuxen.Add(ageInput);
+                        Console.WriteLine("Standardpris: 120kr");
+                    }
                 }
-                else if (ageInput >= 64)
+                else //3.Programmet ser om personen är ungdom (under 5 år eller över 100)
                 {
-                    elder.Add(ageInput);
-                    Console.WriteLine("Pensionärspris: 90kr");
-                }
-                else
-                {
-                    vuxen.Add(ageInput);
-                    Console.WriteLine("Standardpris: 120kr");
+                    free.Add(ageInput);
+                    Console.WriteLine("Gratis Entré!"); //4.Om det ovanstående är sant skall programmet skriva ut: Ungdomspris: 80kr
                 }
             }
 
             Console.WriteLine("\n//////////////////////////////\n" +
-                "///////SUMMERING SF BIO///////" + "\n//////////////////////////////");
+                "/////  SUMMERING SF BIO  /////" + "\n//////////////////////////////");
             //Loppar genom personer och skriver ut angivna ålder
             for (int i = 0; i < persAge.Length; i++)
             {
                 Console.WriteLine($"Angivna ålder person {i + 1}:\t{persAge[i]} år");
             }      
             //Skriver ut antal personer i varje kundgrupp i listor
-            Console.WriteLine("\nAntal Vuxna: " + vuxen.Count + "\nAntal Ungdom: " + ungdom.Count + "\nAntal Pensionär: " + elder.Count);
+            Console.WriteLine("\nAntal Vuxna: " + vuxen.Count + "\nAntal Ungdom: " + ungdom.Count + "\nAntal Pensionär: " + elder.Count + "\nFria platser: " + free.Count) ;
 
             //Multipicerar antal element i varje lista med priset för varje kundgrupp
             int prisVuxen = vuxen.Count() * 120;
             int prisUngdom = ungdom.Count() * 80;
             int prisElder = elder.Count() * 90;
+            int prisFree = free.Count() * 0;
             //Skriver ut priset för varje krundgrupp/lista
-            Console.Write("\nSumma Vuxen: " + prisVuxen + " Kr");
+            Console.Write("\nSumma Vuxna: " + prisVuxen + " Kr");
             Console.Write("\nSumma Ungdom: " + prisUngdom + " Kr");
-            Console.WriteLine("\nSumma Pensionär: " + prisElder + " Kr\n");
+            Console.WriteLine("\nSumma Pensionär: " + prisElder + " Kr");
+            Console.WriteLine("Fria platser: " + prisFree + " Kr\n");
+
             //Summerar antal personer och kostnad per person
-            Console.Write("Total personer: " + (vuxen.Count + ungdom.Count + elder.Count));
+            Console.Write("Total personer: " + (vuxen.Count + ungdom.Count + elder.Count + free.Count));
             Console.Write("\nTotal summa: " + (prisElder+prisUngdom+prisVuxen) + " Kr\n");
         }
         private static void TenTimes()
