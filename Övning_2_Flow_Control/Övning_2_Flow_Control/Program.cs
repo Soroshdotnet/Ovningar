@@ -34,8 +34,10 @@ namespace Övning_2_Flow_Control
 
                             /*
                              * Hämtar antal personer
-                             * sparar personer i kundgrupper (vuxen, ung, elder)
-                             * 
+                             * Hämtar ålder per person
+                             * Sparar personer i respektive kundgrupper (vuxen, ung, elder)
+                             * Kalkylerar pris per kundgrupp
+                             * Summerar pris för kundgrupp
                              */
                         {
                             Console.Write("Ange antal personer: ");
@@ -44,17 +46,17 @@ namespace Övning_2_Flow_Control
                             RäknaSällskap(antalPers); //Metod beräkna sällskap
                         }
 
-                        else if (menu2 == "0")
+                        else if (menu2 == "0") // tillbaka till huvudmenyn
                             break;
-                        else Console.WriteLine("Error");
+                        else Console.WriteLine("Error"); //Undantagshantering 
                         break;
 
                     case "2":
-                        TenTimes();
+                        TenTimes(); // Metod upperpa tio gånger i samma rad
                         break;
 
                     case "3":
-                        TredjeOrdet();
+                        TredjeOrdet(); // Metod funktion hitta tredje ordet i en mening
                         break;
 
                     case "0": //Exit program
