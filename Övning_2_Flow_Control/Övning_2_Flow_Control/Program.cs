@@ -11,89 +11,112 @@ namespace Övning_2_Flow_Control
         {
             Console.WriteLine("--------------------------------------\n" + "Välkommen till övning 2 Flow Control!"+ "\n--------------------------------------");
 
-            // Metod PrintMenu
             PrintMenu();
 
-            do //Oändlig iteration, bool med tillhörande while-loop.
+            do 
             {
-                string menuInput = Console.ReadLine(); //Läser menyval
-                switch (menuInput) //Switch Huvudmeny
+                string menuInput = Console.ReadLine();
+                switch (menuInput) 
                 {
-                    case "1": //Menyval 1
-                        AgeCheck(); //Metod kontrollera pensionär eller ungdom
+                    case "1": 
+                        //Hantera metod AgeCheck
+                        //Sedan skriv ut Undermeny
+                        // OM RäknaSällskap > Hantera metod
+                        // ANNARS tillbaka till Hvudmeny
+
+                        AgeCheck();
 
                         //UNDERMENYN 1:1
                         Console.WriteLine("_____________________________");
                         Console.WriteLine("UNDERMENY VÄLJ ETT ALTERNATIV");
                         Console.WriteLine("1: Beräkna sällskap");
                         Console.WriteLine("0: Tillbaka");
-                        string menu2 = Console.ReadLine(); //Läser input undermeny
+
+                        //Läser input undermeny
+                        string menu2 = Console.ReadLine(); 
 
                         if (menu2 == "1") //om menyval 1:1 påbörja beräkning av sällskap
 
                         /*
                          * Hämtar antal personer
                          * Hämtar ålder per person
-                         * Sparar personer i respektive kundgrupper (vuxen, ung, elder)
+                         * Sparar personer i respektive kundgrupper (vuxen, ung, elder, free)
                          * Kalkylerar pris per kundgrupp
                          * Summerar pris för kundgrupp
                          */
-                        {
+                        {   //Hämtar antal och omvandlar sträng till int
+                            //Array för att spara antal personer
+                            //Metod beräkna sällskap
                             Console.Write("Ange antal personer sedan tryck Enter: ");
-                            int lenght = int.Parse(Console.ReadLine()); //hämtar antal och omvandlar sträng till int
-                            int[] antalPers = new int[lenght]; //array för att spara antal personer
-                            RäknaSällskap(antalPers); //Metod beräkna sällskap
+                            int lenght = int.Parse(Console.ReadLine());
+                            int[] antalPers = new int[lenght];
+                            RäknaSällskap(antalPers);
                         }
                      
-                        else if (menu2 == "0") // tillbaka till huvudmenyn
+                        else if (menu2 == "0")
                             break;
 
-                        else Console.WriteLine("Error"); //Undantagshantering                                       
+                        else Console.WriteLine("Error");                               
                             break;
 
                     case "2":
-                        TenTimes(); // Metod upperpa tio gånger i samma rad
+                        TenTimes(); 
                         break;
 
                     case "3":
-                        TredjeOrdet(); // Metod funktion hitta tredje ordet i en mening
+                        TredjeOrdet(); 
                         break;
 
-                    case "0": //Exit program
+                    case "0": 
                         Environment.Exit(0);
                         break;
-                    default: //Felmeddelande
+                    default: 
                         Console.WriteLine("\nError!");
                         break;
                 }
+
+                //Uppmanar användare till nytt menyval
                 Console.Write("\n--------------------" +
-                    "\nVad vill du göra nu?\n--------------------\n"); //Uppmanar användare till nytt menyval
+                    "\nVad vill du göra nu?\n--------------------\n"); 
                 
-                PrintMenu();//Metod skriver ut meny i while loop
+                PrintMenu();
 
             } while (true);
         }
         private static void AgeCheck()
         {
+
+
+
             Console.Write("Ange ålder: ");
             int age = int.Parse(Console.ReadLine()); // Läser inmatning och konverterar detta från en sträng till en int
 
-            if (age >= 6 && age <= 99)//Programmet selecterar om personen är ungdom (under 5 år eller över 100)
+
+
+            //Programmet selecterar om personen är ungdom (under 5 år eller över 100)
+            //Programmet selecterar om personen är ungdom (under 20 år)
+            //4.Om det ovanstående är sant skall programmet skriva ut: Ungdomspris: 80kr
+            //5.Annars kollar programmet om personen är en pensionär (över 64 år)
+            // 6.Om ovanstående är sant skall programmet skruva ut: Pensionärspris: 90kr
+            // skriva ut: Standardpris: 120kr
+            //ANNARS ovanstående inte stämmer skriv ut nedan
+
+            if (age >= 6 && age <= 99)
             {
-                if (age <= 20)//Programmet selecterar om personen är ungdom (under 20 år)
+                if (age <= 20)
                 {
-                    Console.WriteLine("Ungdomspris: 80kr"); //4.Om det ovanstående är sant skall programmet skriva ut: Ungdomspris: 80kr
+                    Console.WriteLine("Ungdomspris: 80kr"); 
                 }
-                else if (age >= 64) //5.Annars kollar programmet om personen är en pensionär (över 64 år)
+                else if (age >= 64) 
                 {
-                    Console.WriteLine("Pensionärspris: 90kr"); // 6.Om ovanstående är sant skall programmet skruva ut: Pensionärspris: 90kr
+                    Console.WriteLine("Pensionärspris: 90kr"); 
                 }
-                else //7.Annars skall programmet
+                else
                 {
-                    Console.WriteLine("Standardpris: 120kr"); // skriva ut: Standardpris: 120kr
+                    Console.WriteLine("Standardpris: 120kr"); 
                 }
             }
-            else //ANNARS ovanstående inte stämmer skriv ut nedan
+            else 
             {
                 Console.WriteLine("Gratis Entré!");
             }
@@ -108,32 +131,45 @@ namespace Övning_2_Flow_Control
 
             for (int i = 0; i < persAge.Length; i++) // Loopar lika många gånger som det finns element i array 
             {
-                Console.Write($"Ange ålder person {i + 1}: "); //Hämtar ålder per element
-                int ageInput = int.Parse(Console.ReadLine()); //omvandlar sträng till int
-                persAge[i] = ageInput; // sparar ålder per element/person
+
+                //Hämtar ålder per element
+                //omvandlar sträng till int
+                //sparar ålder per element/person
+                Console.Write($"Ange ålder person {i + 1}: "); 
+                int ageInput = int.Parse(Console.ReadLine()); 
+                persAge[i] = ageInput;
 
                 //Selecterar indata till listor kundgrupper
-                if (ageInput >= 6 && ageInput <= 99)// OM mellan 5 - 100 år gör nedan
+                // OM mellan 5 - 100 år gör nedan
+                //OM under 20 år lägg i lista ungdom
+                //ANNARS OM över 64 år
+                //Lägg i lista elder
+                //ANNARS mellan 20 - 64 år
+                //Lägg i lista standard
+                //ANNARS under 5 år eller över 100 år
+                //Placsera i listan free
+
+                if (ageInput >= 6 && ageInput <= 99)
                 {
-                    if (ageInput <= 20)//OM under 20 år
+                    if (ageInput <= 20)
                     {
-                        ungdom.Add(ageInput); //Lägg i lista ungdom
+                        ungdom.Add(ageInput); 
                         Console.WriteLine("Ungdomspris: 80kr");
                     }
-                    else if (ageInput >= 64) //ANNARS OM över 64 år
+                    else if (ageInput >= 64) 
                     {
-                        elder.Add(ageInput);//Lägg i lista elder
+                        elder.Add(ageInput);
                         Console.WriteLine("Pensionärspris: 90kr");
                     }
-                    else //ANNARS mellan 20 - 64 år
+                    else 
                     {
-                        standard.Add(ageInput);//Lägg i lista standard
+                        standard.Add(ageInput);
                         Console.WriteLine("Standardpris: 120kr");
                     }
                 }
-                else //ANNARS under 5 år eller över 100 år
+                else 
                 {
-                    free.Add(ageInput); //Placsera i listan free
+                    free.Add(ageInput); 
                     Console.WriteLine("Gratis Entré!");
                 }
             }
@@ -165,25 +201,34 @@ namespace Övning_2_Flow_Control
         }
         private static void TenTimes()
         {
+            //Sparar sträng i variabel x10
+            //Loppar index 10 gånger
+            //Skriver ut ordet varje loop
+
             Console.Write("Skriv något sedan tryck Enter: ");
-            string x10 = Console.ReadLine(); //Sparar sträng i variabel x10
+            string x10 = Console.ReadLine(); 
             Console.Write("\nResultat: ");
-            for (int index = 0; index < 10; index++) //Loppar index 10 gånger
+            for (int index = 0; index < 10; index++) 
             {
-                Console.Write(x10+ ". "); //Skriver ut ordet varje loop
+                Console.Write(x10+ ". "); 
             }
         }
         private static void TredjeOrdet()
         {
+            //Läser sträng och sparar i variabel phrase
+            //Delar upp sträng för varje mellanslag och placerar i array variabel words.
+            //om array innheåller 3 eller fler element ->
+            //Skriv ut tredje ordet 
+
             Console.Write("Skriv en mening över 3 ord: ");
-            var phrase = Console.ReadLine(); //Läser sträng och sparar i variabel phrase
-            var words = phrase.Split(" "); //Delar upp sträng för varje mellanslag och placerar i array variabel words.
-            if (words.Length > 2) //om array innheåller 3 eller fler element ->
-                Console.Write("Det tredje ordet i din mening är: " + words[2]); //Skriv ut tredje ordet 
+            var phrase = Console.ReadLine(); 
+            var words = phrase.Split(" "); 
+            if (words.Length > 2) 
+                Console.Write("Det tredje ordet i din mening är: " + words[2]); 
             else //undantagshantering
                 Console.WriteLine("ERROR. Du måste skriva minst 3 ord!");
         }
-        private static void PrintMenu() // Metod skriver ut menyn
+        private static void PrintMenu() //Huvudmeny
         {
             Console.WriteLine("HUVUDMENY VÄLJ EN FUNKTION");
             Console.WriteLine("Menyval 1: Ungdom eller pensionär" +
