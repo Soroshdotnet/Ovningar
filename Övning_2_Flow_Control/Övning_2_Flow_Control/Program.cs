@@ -223,7 +223,7 @@ namespace Övning_2_Flow_Control
 
             Console.Write("Skriv en mening över 3 ord: ");
             var phrase = Console.ReadLine(); 
-            var words = phrase.Split(" "); 
+            var words = phrase.Split(" ", StringSplitOptions.RemoveEmptyEntries); 
             if (words.Length > 2) 
                 Console.Write("Det tredje ordet i din mening är: " + words[2]); 
             else //undantagshantering
