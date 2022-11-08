@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning1-Personalregister", "Övning1-Personalregister\Övning1-Personalregister.csproj", "{D4F74177-505D-4ECB-87BF-465957C62A43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ovning_3_Inkapsling_arv_och_polymorfism", "Ovning_3_Inkapsling_arv_och_polymorfism.csproj", "{D2B56B02-26DF-48C3-9106-A205BB9878CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D4F74177-505D-4ECB-87BF-465957C62A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4F74177-505D-4ECB-87BF-465957C62A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4F74177-505D-4ECB-87BF-465957C62A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4F74177-505D-4ECB-87BF-465957C62A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2B56B02-26DF-48C3-9106-A205BB9878CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2B56B02-26DF-48C3-9106-A205BB9878CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2B56B02-26DF-48C3-9106-A205BB9878CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2B56B02-26DF-48C3-9106-A205BB9878CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {074CF303-A6E7-4DC5-BD85-D67DF3D0EBFA}
+		SolutionGuid = {8ECF5F67-6162-416C-876E-3501818029C2}
 	EndGlobalSection
 EndGlobal

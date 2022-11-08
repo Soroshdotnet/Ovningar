@@ -85,9 +85,7 @@ namespace Övning_2_Flow_Control
         }
         private static void AgeCheck()
         {
-            Console.Write("Ange ålder: ");
-            int age = int.Parse(Console.ReadLine()); 
-            
+
             // Läser inmatning och konverterar detta från en sträng till en int
             //Programmet selecterar om personen är ungdom (under 5 år eller över 100)
             //Programmet selecterar om personen är ungdom (under 20 år)
@@ -97,26 +95,41 @@ namespace Övning_2_Flow_Control
             // skriva ut: Standardpris: 120kr
             //ANNARS ovanstående inte stämmer skriv ut Gratis 
 
-            if (age >= 6 && age <= 99)
+            Console.Write("Ange ålder: ");
+
+
+            uint age;
+            bool output1 = uint.TryParse(Console.ReadLine(), out age);
             {
-                if (age <= 20)
+                if (age >= 6 && age <= 99)
                 {
-                    Console.WriteLine("Ungdomspris: 80kr"); 
-                }
-                else if (age >= 64) 
-                {
-                    Console.WriteLine("Pensionärspris: 90kr"); 
+                    if (age <= 20)
+                    {
+                        Console.WriteLine("Ungdomspris: 80kr");
+                    }
+                    else if (age >= 64)
+                    {
+                        Console.WriteLine("Pensionärspris: 90kr");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Standardpris: 120kr");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Standardpris: 120kr"); 
+                   
                 }
+                Console.WriteLine("Du måste ange heltal");
+
             }
-            else 
-            {
-                Console.WriteLine("Gratis Entré!");
-            }
+
+            //if (output1 = false)
+            Console.WriteLine("Gratis Entré!");
+
+
         }
+
         private static void RäknaSällskap(int[] persAge)
         {
             //Kundgrupper i listor
@@ -207,6 +220,7 @@ namespace Övning_2_Flow_Control
             //Skriver ut ordet varje loop
 
             Console.Write("Skriv något sedan tryck Enter: ");
+
             string x10 = Console.ReadLine(); 
             Console.Write("\nResultat: ");
             for (int index = 0; index < 10; index++) 

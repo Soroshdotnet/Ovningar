@@ -15,7 +15,7 @@ namespace Övning1_Personalregister
 //    Uppgift 3 Skriv programmet.
 
 {
-    internal class Program
+    internal class Program 
     {
         static void Main(string[] args)
         {
