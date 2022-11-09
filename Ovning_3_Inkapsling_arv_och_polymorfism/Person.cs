@@ -11,7 +11,9 @@ namespace Ovning_3_Inkapsling_arv_och_polymorfism
 
         public int ageField { get; set; }
 
-       // private int ageObject = new Person();
+
+
+        // private int ageObject = new Person();
 
 
 
@@ -28,19 +30,7 @@ namespace Ovning_3_Inkapsling_arv_och_polymorfism
         //public int PersonId { get; private set; }
         //public int age { get; set; }
 
-        //public AgeMethod()
-        //{
-        //    try
-        //    {
-        //        ageField = "0" 
-        //    }
-        //    catch (Exception)
-        //    {
 
-        //        throw;
-        //    }
-
-        //}
 
         //** Auto-implemented properties
         //public string age { get; set; }
