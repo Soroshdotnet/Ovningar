@@ -9,8 +9,10 @@
 
 
             //F: Instansiera en person i Program.cs, kommer du direkt åt variablerna?
-            //S: Nej jag kommer inte åt fält/variabler i Klassen Person om jag inte instansiera objekt i klassen och görs publikt.
+            //S: Nej jag kommer inte åt fält/variabler i Klassen Person
             Person person = new Person();
+
+            
 
 
 

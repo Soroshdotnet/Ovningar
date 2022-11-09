@@ -9,11 +9,11 @@ namespace Ovning_3_Inkapsling_arv_och_polymorfism
     public class Person
     {
 
-        public int ageField { get; set; }
+        private int ageField; //{ get; set; }
 
 
 
-        // private int ageObject = new Person();
+        // private int ageObj = new Person();
 
 
 
