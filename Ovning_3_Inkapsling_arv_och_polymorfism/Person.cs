@@ -18,11 +18,15 @@ namespace Ovning_3_Inkapsling_arv_och_polymorfism
          
 
 
-        public Person (string age)
+        public Person (string age = "1")
         {
             ageField = age;
+
+            Console.WriteLine(age);
         }
-        public string age { get; set; }
+
+
+       // public string age { get; set; }
 
 
         // private int ageField; //{ get; set; }
