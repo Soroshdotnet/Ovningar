@@ -11,7 +11,10 @@
             //F: Instansiera en person i Program.cs, kommer du direkt åt variablerna?
             //S: Nej jag kommer inte åt fält/variabler i Klassen Person
            
-            Person persVar = new Person("1");
+            Person person = new Person("test");
+
+            Console.WriteLine(person);
+            
 
 
             
