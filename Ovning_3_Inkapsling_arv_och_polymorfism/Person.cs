@@ -15,7 +15,7 @@ namespace Ovning_3_Inkapsling_arv_och_polymorfism
         private int heightField;
         private int weightField;
 
-
+         
 
 
         public Person (string age)
