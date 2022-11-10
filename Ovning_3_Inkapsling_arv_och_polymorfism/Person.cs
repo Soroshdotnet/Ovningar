@@ -9,22 +9,23 @@ namespace Ovning_3_Inkapsling_arv_och_polymorfism
     public class Person
     {
 
-        private int ageField; //{ get; set; }
-
-
-
-        // private int ageObj = new Person();
-
-
-
-
+        private string ageField;
         private string fNameField;
         private string lNameField;
         private int heightField;
         private int weightField;
 
+        public Person (string age)
+        {
+            ageField = age;
+        }
+       // public string ageField { get; set; }
 
-       
+
+        // private int ageField; //{ get; set; }
+
+
+        // private int ageObj = new Person();
 
 
         //public int PersonId { get; private set; }
