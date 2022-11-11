@@ -15,7 +15,18 @@ namespace Ovning_3_Inkapsling_arv_och_polymorfism
         private int heightField;
         private int weightField;
 
-
+        public int Age 
+        {
+            get => ageField;
+            set
+            {
+                if(value < 0)
+                {
+                    throw new ArgumentException("Age cannot be negative.");
+                }
+                ageField = value;
+            }
+        }
         //ageField
         //Fungerar***
         // 
@@ -23,23 +34,23 @@ namespace Ovning_3_Inkapsling_arv_och_polymorfism
         {
             //ageField = age;
 
-            Console.WriteLine("Ange ålder: ");
-            int ageField = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Ange ålder: ");
+            //int ageField = Convert.ToInt32(Console.ReadLine());
             //int[] age = { 10, 7 };
            // foreach (var value in values)
            //ToDo: Validering
-            {
-                try
-                {
+            //{
+            //    try
+            //    {
                     
-                    Console.WriteLine("Age: " + age + "\n ageField: " + ageField);
-                }
-                catch (ArgumentException)
-                {
-                    Console.WriteLine("Minsuvärde");
-                }
-                Console.WriteLine();
-            }
+            //        Console.WriteLine("Age: " + age + "\n ageField: " + ageField);
+            //    }
+            //    catch (ArgumentException)
+            //    {
+            //        Console.WriteLine("Minsuvärde");
+            //    }
+            //    Console.WriteLine();
+            //}
 
             //    try
             //{
