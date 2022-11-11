@@ -9,8 +9,7 @@
 
 
             //F: Instansiera en person i Program.cs, kommer du direkt åt variablerna?
-            //S: Nej jag kommer inte åt fält/variabler i Klassen Person
-           
+            //S: Nej jag kommer inte åt fält/variabler i Klassen Person om det inte skapas en publik konstruktor/metod i klassen(?)
             Person person = new Person();
 
             
