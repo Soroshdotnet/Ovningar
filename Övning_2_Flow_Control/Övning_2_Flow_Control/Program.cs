@@ -9,7 +9,7 @@ namespace Övning_2_Flow_Control
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--------------------------------------\n" + "Välkommen till övning 2 Flow Control!"+ "\n--------------------------------------");
+            Console.WriteLine("--------------------------------------\n"+ "Välkommen till övning 2 Flow Control!"+ "\n--------------------------------------");
 
             PrintMenu();
 

@@ -13,13 +13,28 @@ namespace Ovning_3_Inkapsling_arv_och_polymorfism
         {
             Person person = new Person();
             person.Age = age;
+            person.Fname = fname;
+            person.Lname = lname;
+            
             // gör samma sak för resten av properties
-            return person;
+            return person;  
+
         }
 
         public void SetAge(Person person, int age)
         {
             person.Age = age;
         }
+
+        public void SetFirstName(Person person, string fname)
+        {
+            person.Fname = fname;
+        }
+        public void SetLastName(Person person, string lname)
+        {
+            person.Lname = lname;
+        }
+
+
     }
 }
