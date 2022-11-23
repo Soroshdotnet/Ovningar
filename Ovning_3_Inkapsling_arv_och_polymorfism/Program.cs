@@ -40,7 +40,7 @@
             var ph3 = new PersonHandler();
             try
             {
-                var person = ph.CreatePerson("Här", "och här", 40, 40, 40);
+                var person = ph.CreatePerson("men ändå", "fungerar programmet?", 40, 40, 40);
                 ph.SetLastName(person, "Efternaaaammnnnnnnnnn");
             }
             catch (ArgumentException ex)
