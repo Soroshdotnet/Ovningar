@@ -1,4 +1,4 @@
-﻿namespace Övning_5_Garage_1._0
+﻿namespace Övning_5___Garage_1._0
 {
     internal class Program
     {
