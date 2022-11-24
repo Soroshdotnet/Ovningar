@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning 5 - Garage 1.0", "Övning 5 - Garage 1.0.csproj", "{894F9F95-9A73-4470-BCE1-34BBA95F9A34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning_5_Garage_1.0", "Övning_5_Garage_1.0.csproj", "{894F9F95-9A73-4470-BCE1-34BBA95F9A34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
