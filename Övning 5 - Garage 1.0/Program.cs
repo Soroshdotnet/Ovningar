@@ -1,28 +1,30 @@
 ﻿using Övning_5_Garage_1._0;
 
+/* Comments:
+Garage klass
+Vehicle array
+    Flygplan
+    Moped
+    Bil
+    Buss
+    Båt    
+Sök Vehicle array
+Presentera garage
+Printa meny
+*/
+
 namespace Övning_5__Garage_1._0
 {
     internal class Program
     {
-
-        /*
-        Garage klass
-        Vehicle array
-            Flygplan
-            Moped
-            Bil
-            Buss
-            Båt    
-        Sök Vehicle array
-        Presentera garage
-        Printa meny
-        */
         static void Main(string[] args)
         {
 
             Console.WriteLine("Välkommen till Garaget 1.0");
 
             ChooseCapacity();
+
+            PrintGarage();
             
             PrintMenu();
 
@@ -54,8 +56,16 @@ namespace Övning_5__Garage_1._0
                 //Uppmanar användare till nytt menyval
                 Console.Write("\n--------------------" +
                     "\nVad vill du göra nu?\n--------------------\n");
+                PrintMenu();
 
             } while (true);
+        }
+
+        private static void PrintGarage()
+        {
+            //ToDo: Print Array from Garage class
+            Garage garage = new Garage();
+            Console.WriteLine(garage.Fordon);
         }
 
         private static void ChooseCapacity()
@@ -66,10 +76,10 @@ namespace Övning_5__Garage_1._0
         private static void AddVehicle()
         {
 
-            //Test klass
-            Vehicle vehicle = new Vehicle();
-            vehicle.AirPlane = Console.ReadLine();
-            Console.WriteLine(vehicle.AirPlane);
+            ////Test klass
+            //Vehicle vehicle = new Vehicle();
+            //vehicle.AirPlane = Console.ReadLine();
+            //Console.WriteLine(vehicle.AirPlane);
         }
 
         private static void RemoveVehicle()
