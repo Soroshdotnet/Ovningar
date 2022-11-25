@@ -1,18 +1,17 @@
-﻿//namespace Övning_5_Garage_1._0
-//{
-//    internal class Vehicle
-//    {
-//        private string airplaneMotor;
-//        private string airplaneBrand;
+﻿namespace Övning_5_Garage_1._0
+{
+    internal abstract class Vehicle
+    {
+        public string RegNr { get; set; }
 
-//        public string AirPlane
-//        {
-//            get => airplaneMotor;
-//            set
-//            {
-//                airplaneMotor = value;
+        public Vehicle(string regnr)
+        {
+            RegNr = regnr;
+        }
 
-//            }
-//        }
-//    }
-//}
+        public virtual string VehicleInfo()
+        {
+            return $"Type: {this.GetType().Name}, License plate: {RegNr}, ";
+        }
+    }
+}

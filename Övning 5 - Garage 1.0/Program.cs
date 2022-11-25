@@ -1,16 +1,21 @@
-﻿using Övning_5_Garage_1._0;
+﻿using Övning_5___Garage_1._0;
+using Övning_5_Garage_1._0;
 
 /* Comments:
-Garage klass
-Vehicle array
-    Flygplan
-    Moped
-    Bil
-    Buss
-    Båt    
-Sök Vehicle array
-Presentera garage
-Printa meny
+        Garage klass
+        Sätt garage kapasitet
+          Vehicle array
+             Flygplan
+             Moped
+             Bil
+             Buss
+             Båt    
+        Presentera garage
+        Printa meny
+            Lägg till / Ta bort fordon
+            Skriv ut alla fordon
+            
+            Sök Vehicle array
 */
 
 namespace Övning_5__Garage_1._0
@@ -20,13 +25,31 @@ namespace Övning_5__Garage_1._0
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Välkommen till Garaget 1.0");
+            var car = new Car("CAR111", "Volvo");
+            Console.WriteLine(car.VehicleInfo());
 
-            ChooseCapacity();
+            //ToDo:  Få att fungera
+            var garage = new Garage<Vehicle>(10);
+            garage.Park(new Car("CAR222", "BMW"));
 
-            PrintGarage();
+
+            foreach(var vehicle in garage)
+            {
+                Console.WriteLine(vehicle.VehicleInfo());
+            }
+
+            //garage.Any(c => c.RegNr == "HejHej");
+            //garage.Where(c => c.RegNr == "HEJEHJ");
+
+
+
+            //Console.WriteLine("Välkommen till Garaget 1.0");
+
+            //ChooseCapacity();
+
+            //PrintGarage();
             
-            PrintMenu();
+            //PrintMenu();
 
             do
             {
@@ -63,9 +86,10 @@ namespace Övning_5__Garage_1._0
 
         private static void PrintGarage()
         {
-            //ToDo: Print Array from Garage class
-            Garage garage = new Garage();
-            Console.WriteLine(garage.Fordon);
+            ////ToDo: Print Array from Garage class
+
+            //Garage garage = new Garage();
+            //Console.WriteLine(garage.Fordon);
         }
 
         private static void ChooseCapacity()

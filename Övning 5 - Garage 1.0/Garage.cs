@@ -1,25 +1,44 @@
-﻿namespace Övning_5_Garage_1._0
+﻿using System.Collections;
+
+namespace Övning_5_Garage_1._0
 {
-    internal class Garage
+    internal class Garage<T> : IEnumerable<T> where T : Vehicle
     {
 
-        //ToDo: Print Array from Garage
-        private string[] vehicle = new string[4];
+        private T[] vehicles;
 
-        public string Fordon
+        public Garage(int capacity)
         {
-            get => vehicle[0];
-            set
-            {
-                vehicle[0] = "A";
-                vehicle[1] = "B";
-                vehicle[2] = "C";
-                vehicle[3] = "D";
-                vehicle[4] = "E";
-
-            }
+            vehicles = new T[capacity];
         }
 
 
+        //ToDo implamentera metoder Park och Unpark
+
+        public bool Park(T newVehicle)
+        {
+            return false;
+        }
+
+        public bool Unpark(string regnr)
+        {
+            return false;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+           foreach(var vehicle in vehicles)
+           {
+                if(vehicle != null)
+                {
+                    yield return vehicle;
+                }
+           }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+           return GetEnumerator();
+        }
     }
 }
