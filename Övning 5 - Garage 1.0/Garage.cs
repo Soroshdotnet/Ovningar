@@ -5,7 +5,7 @@ namespace Övning_5_Garage_1._0
     internal class Garage<T> : IEnumerable<T> where T : Vehicle
     {
 
-        private T[] vehicles;
+        public T[] vehicles;
 
         public Garage(int capacity)
         {
@@ -17,6 +17,7 @@ namespace Övning_5_Garage_1._0
 
         public bool Park(T newVehicle)
         {
+            vehicles[0] = newVehicle;
             return false;
         }
 
@@ -27,18 +28,18 @@ namespace Övning_5_Garage_1._0
 
         public IEnumerator<T> GetEnumerator()
         {
-           foreach(var vehicle in vehicles)
-           {
-                if(vehicle != null)
+            foreach (var vehicle in vehicles)
+            {
+                if (vehicle != null)
                 {
                     yield return vehicle;
                 }
-           }
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-           return GetEnumerator();
+            return GetEnumerator();
         }
     }
 }
