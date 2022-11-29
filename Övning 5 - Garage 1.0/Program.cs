@@ -31,6 +31,9 @@ namespace Övning_5__Garage_1._0
             //ToDo:  Få att synas
             var garage = new Garage<Vehicle>(10);
             garage.Park(new Car("CAR222", "BMW"));
+            garage.Park(new Car("CAR123", "Volvo"));
+            garage.Park(new Car("CAR333", "SAAB"));
+            garage.Unpark("CAR333");
          
             foreach(var vehicle in garage)
             {
