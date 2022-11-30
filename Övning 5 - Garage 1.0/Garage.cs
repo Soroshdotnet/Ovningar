@@ -12,9 +12,7 @@ namespace Övning_5_Garage_1._0
             vehicles = new T[capacity];
         }
 
-
         //ToDo implamentera metoder Park och Unpark
-
         public bool Park(T newVehicle)
         {
             for (var i = 0; i < vehicles.Length; i++)
@@ -25,7 +23,6 @@ namespace Övning_5_Garage_1._0
                     return true;
                 }
             }
-
             return false;
         }
 
@@ -40,7 +37,6 @@ namespace Övning_5_Garage_1._0
                     return true;
                 }
             }
-
             return false;
         }
 

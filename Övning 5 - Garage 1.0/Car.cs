@@ -12,7 +12,8 @@ namespace Övning_5___Garage_1._0
         public string Brand { get; set; }
         public Car(string regnr, string brand) : base(regnr)
         {
-            Brand = brand;
+            Console.WriteLine("Ange brand");
+            Brand = Console.ReadLine();
         }
 
         public override string VehicleInfo()

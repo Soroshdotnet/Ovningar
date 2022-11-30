@@ -6,7 +6,8 @@
 
         public Vehicle(string regnr)
         {
-            RegNr = regnr;
+            Console.WriteLine("Ange regnr:");
+            RegNr = Console.ReadLine();
         }
 
         public virtual string VehicleInfo()

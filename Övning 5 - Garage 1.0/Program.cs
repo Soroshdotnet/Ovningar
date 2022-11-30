@@ -25,17 +25,31 @@ namespace Övning_5__Garage_1._0
         static void Main(string[] args)
         {
 
+            
+
+
+
+
             //var car = new Car("CAR111", "Volvo");
             //Console.WriteLine(car.VehicleInfo());
 
             //ToDo:  Få att synas
             var garage = new Garage<Vehicle>(10);
+
             garage.Park(new Car("CAR222", "BMW"));
-            garage.Park(new Car("CAR123", "Volvo"));
-            garage.Park(new Car("CAR333", "SAAB"));
-            garage.Unpark("CAR333");
-         
-            foreach(var vehicle in garage)
+            
+            //garage.Park(new Car("CAR123", "Volvo"));
+            //garage.Park(new Car("CAR333", "SAAB"));
+            //garage.Unpark("CAR333");
+
+
+
+            //garage.Park(new Car(Console.ReadLine()));
+            //garage.Park(new Car(Console.ReadLine()));
+
+
+
+            foreach (var vehicle in garage)
             {
                 Console.WriteLine(vehicle.VehicleInfo());
             }
